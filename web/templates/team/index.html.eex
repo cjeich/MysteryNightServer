@@ -1,0 +1,30 @@
+<h2>Listing teams</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Points</th>
+      <th>Driver</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for team <- @teams do %>
+    <tr>
+      <td><%= team.name %></td>
+      <td><%= team.points %></td>
+      <td><%= team.driver_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: event_team_path(@conn, :show, team, @event), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: event_team_path(@conn, :edit, team, @event), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: event_team_path(@conn, :delete, team, @event), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New team", to: event_team_path(@conn, :new, @event) %>

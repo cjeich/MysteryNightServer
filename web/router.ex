@@ -17,6 +17,22 @@ defmodule MysteryNight.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/hello", HelloController, :index
+
+    resources "/events", EventController do
+      resources "/stations", StationController do
+        resources "/locations", LocationController
+      end
+
+      resources "/teams", TeamController do
+        resources "/users", UserController
+      end
+    end
+
+    resources "/teams", TeamController
+    resources "/stations", StationController
+    resources "/locations", LocationController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.

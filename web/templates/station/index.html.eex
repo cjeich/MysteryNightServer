@@ -1,0 +1,46 @@
+<h2>Listing stations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Event</th>
+      <th>Location</th>
+      <th>Open</th>
+      <th>Notes</th>
+      <th>Clue</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for station <- @stations do %>
+    <tr>
+      <td><%= station.name %></td>
+      <td><%= station.address1 %></td>
+      <td><%= station.address2 %></td>
+      <td><%= station.city %></td>
+      <td><%= station.state %></td>
+      <td><%= station.zip %></td>
+      <td><%= station.event_id %></td>
+      <td><%= station.location_id %></td>
+      <td><%= station.open %></td>
+      <td><%= station.notes %></td>
+      <td><%= station.clue %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: station_path(@conn, :show, station), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: station_path(@conn, :edit, station), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: station_path(@conn, :delete, station), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New station", to: station_path(@conn, :new) %>

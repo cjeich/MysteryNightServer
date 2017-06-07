@@ -1,0 +1,6 @@
+<h2>Edit station</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: station_path(@conn, :update, @station) %>
+
+<%= link "Back", to: station_path(@conn, :index) %>

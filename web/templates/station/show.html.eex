@@ -1,0 +1,63 @@
+<h2>Show station</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @station.name %>
+  </li>
+
+  <li>
+    <strong>Address1:</strong>
+    <%= @station.address1 %>
+  </li>
+
+  <li>
+    <strong>Address2:</strong>
+    <%= @station.address2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @station.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @station.state %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @station.zip %>
+  </li>
+
+  <li>
+    <strong>Event:</strong>
+    <%= @station.event_id %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @station.location_id %>
+  </li>
+
+  <li>
+    <strong>Open:</strong>
+    <%= @station.open %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @station.notes %>
+  </li>
+
+  <li>
+    <strong>Clue:</strong>
+    <%= @station.clue %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: station_path(@conn, :edit, @station) %>
+<%= link "Back", to: station_path(@conn, :index) %>

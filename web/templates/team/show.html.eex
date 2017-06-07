@@ -1,0 +1,23 @@
+<h2>Show team</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @team.name %>
+  </li>
+
+  <li>
+    <strong>Points:</strong>
+    <%= @team.points %>
+  </li>
+
+  <li>
+    <strong>Driver:</strong>
+    <%= @team.driver_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: event_team_path(@conn, :edit, @team, @event) %>
+<%= link "Back", to: event_team_path(@conn, :index, @event) %>
